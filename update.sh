@@ -1,6 +1,6 @@
 #!/bin/bash
-# JSON.parse( $("#data").text() ); // copy.
-cat data.json | jq -r '.projects | map([.id, .name] | join("\t") ) | join("\n")' > list.csv
+# JSON.parse( $('meta[name="ol-projects"]').attr('content') ); // copy
+cat data.json | jq -r 'map([.id, .name] | join("\t") ) | join("\n")' > list.csv
 
 DATA=`cat list.csv`
 
